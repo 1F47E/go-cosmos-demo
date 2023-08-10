@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+
 	"log"
 	"os"
 
@@ -100,44 +101,3 @@ func main() {
 	}
 	fmt.Println(string(jsonBytes))
 }
-
-// func queryStateBal() error {
-// 	myAddress, err := sdk.AccAddressFromBech32(validator)
-// 	if err != nil {
-// 		return err
-// 	}
-
-// 	// new connection to the gRPC
-// 	grpcConn, err := grpc.Dial(
-// 		nodeEndpoint,
-// 		grpc.WithInsecure(), // NOTE: required!
-// 		grpc.WithDefaultCallOptions(grpc.ForceCodec(codec.NewProtoCodec(nil).GRPCCodec())),
-// 	)
-// 	if err != nil {
-// 		return err
-// 	}
-// 	defer grpcConn.Close()
-
-// 	// new gRPC client
-// 	bankClient := banktypes.NewQueryClient(grpcConn)
-
-// 	// get the balance
-// 	reqBal := &banktypes.QueryAllBalancesRequest{
-// 		Address: myAddress.String(),
-// 	}
-// 	resp, err := bankClient.AllBalances(context.Background(), reqBal)
-// 	if err != nil {
-// 		log.Fatalf("Failed to fetch balance: %v", err)
-// 	}
-
-// 	for _, coin := range resp.Balances {
-// 		fmt.Printf("%s: %s\n", coin.Denom, coin.Amount)
-// 	}
-
-// 	return nil
-// }
-
-// func main() {
-
-// 	queryStateBal()
-// }
