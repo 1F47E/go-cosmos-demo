@@ -1,0 +1,12 @@
+simple demo of interacting with cosmos node via grpc
+
+go run main.go <address> | jq
+
+{
+  "balances": [
+    {
+      "Coin": "token",
+      "Value": "52"
+    }
+  ]
+}
